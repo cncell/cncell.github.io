@@ -1,0 +1,254 @@
+/* стили для тёмной темы */
+@font-face {
+    font-family: 'PusiaBold'; /* Имя шрифта */
+    src: url('pusiabold.otf') format('opentype'); /* Путь к файлу шрифта */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Add responsiveness for small screens */
+@media (max-width: 768px) {
+    .tabs {
+        flex-direction: column; /* Stack tabs vertically on small screens */
+    }
+    .tab {
+        width: 100%;
+        text-align: center;
+    }
+    .channel-info {
+        flex-direction: column;
+        align-items: center;
+    }
+    .channel-logo-container {
+        margin-bottom: 20px;
+    }
+    .channel-description {
+        max-width: 90%;
+        text-align: center;
+    }
+    .game-container {
+        flex-direction: column; /* Stack the logo and description vertically */
+    }
+    .game-description {
+        text-align: center;
+    }
+    .buttons {
+        flex-direction: column;
+    }
+    .btn {
+        margin-bottom: 10px; /* Add space between buttons */
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: 'PusiaBold', sans-serif;
+	padding-bottom: 50px; /* увеличиваем отступ снизу */
+}
+
+header {
+    background-color: #1a1a1a;
+    padding: 10px 20px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+}
+
+li {
+    margin-left: 20px;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+/* стили для блока канала */
+.channel-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.channel-logo-container {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.channel-logo {
+    max-width: 100%;
+    height: auto;
+    border-radius: 25px;
+}
+
+.channel-description {
+    max-width: 400px;
+}
+
+.channel-description h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.channel-description p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.games-heading {
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 40px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.tab {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 1em;
+	border-radius: 5px;  /* Закругляем углы на 5px */
+}
+
+.tab.active {
+    background-color: #333333;
+	border-radius: 10px;  /* Закругляем углы на 10px */
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.game-section {
+    display: none;
+}
+
+.game-section:first-child {
+    display: block;
+}
+
+.game-container {
+    display: flex;
+	justify-content: center; /* центрируем вкладки */
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo-container {
+    border: none;
+    padding: 20px;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-logo {
+    max-width: 100%; /* чтобы логотип не выходил за пределы контейнера */
+    height: auto;
+	border-radius: 10px;  /* Закругляем углы */
+}
+
+.game-description {
+    font-size: 1.2em;
+    margin-left: 20px;
+    word-wrap: break-word; /* Добавлено для переноса текста */
+    white-space: normal; /* Это тоже может помочь при необходимости */
+    max-width: 400px; /* Ограничивает ширину блока с описанием */
+}
+
+.buttons {
+    display: flex;
+    justify-content: center; /* Центрирует кнопки по горизонтали */
+    align-items: center;     /* Центрирует кнопки по вертикали */
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #444444;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #333333;
+}
+
+.tab:focus, .btn:focus {
+    outline: 3px solid #ffffff;
+}
+
+/* стиль для футера */
+footer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    font-size: 0.9em;
+}
+
+/* стили для страницы 404 */
+.error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    color: #ffffff;
+}
+
+.error-container h1 {
+    font-size: 5em;
+    margin-bottom: 20px;
+}
+
+.error-container p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}

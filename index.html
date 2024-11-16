@@ -1,34 +1,190 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chinese Supercell Prod.</title>
-    <style>
-        body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background-color: #121212;
-            color: #ffffff;
-            font-family: Arial, sans-serif;
-        }
-        .content {
-            text-align: center;
-        }
-        h1 {
-            font-size: 3em;
-        }
-        p {
-            font-size: 1.2em;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <div class="content">
-        <h1>Chinese Supercell Prod.</h1>
-        <p>Скоро будет доступен наш сайт! Оставайтесь с нами 😉</p>
-    </div>
+    <header>
+        <nav>
+            <div class="logo">Chinese Supercell Prod.</div>
+            <ul>
+                <li><a href="donate.html">Донат</a></li>
+                <li><a href="team.html">О команде</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+			<!-- Блок с информацией о канале -->
+		<div class="channel-info">
+			<div class="channel-logo-container">
+				<img src="images/logo.webp" alt="Channel Logo" class="channel-logo">
+			</div>
+			<div class="channel-description">
+				<h2>Chinese Supercell Prod.</h2>
+				<p>Мы - команда Chinese Supercell Prod., мы создатели проекта по переводу китайских игр Supercell на русский, этот сайт для загрузки перевода либо оригинальных игр ниже, а также вы можете подписаться на наш канал, там будут новости о наших проектах и прочем.</p>
+				<a href="https://t.me/cncell_prod" class="btn">Подписаться</a>
+			</div>
+		</div>
+		
+		<!-- Подпись для списка игр -->
+		<h3 class="games-heading">Игры</h3>
+
+        <div class="tabs">
+            <button class="tab active" data-content="bs">Brawl Stars (荒野乱斗)</button>
+            <button class="tab" data-content="coc">Clash of Clans (部落冲突)</button>
+            <button class="tab" data-content="cr">Clash Royale (部落冲突)</button>
+            <button class="tab" data-content="sb">Squad Busters (爆裂小队)</button>
+			<button class="tab" data-content="hd">Hay Day (卡通农场)</button>
+			<button class="tab" data-content="bb">Boom Beach (海岛奇兵)</button>
+        </div>
+
+        <div class="content">
+            <!-- Brawl Stars Section -->
+            <div class="game-section" id="bs">
+                <div class="game-container">
+                    <div class="logo-container">
+                        <!-- Логотип для Brawl Stars -->
+                        <img src="images/logo_brawlstars.webp" alt="Brawl Stars Logo" class="game-logo">
+                    </div>
+                    <div class="game-description">
+                        Динамичная многопользовательская игра для мобильных платформ с боями 3 на 3 и битвой на выживание! Играйте в одиночку или c друзьями в разнообразных режимах продолжительностью до трёх минут!
+                    </div>
+                </div>
+                <div class="buttons">
+                    <a href="bs.html" class="btn">Скачать (Android & iOS)</a>
+                    <a href="index.html" class="btn">Скачать с переводом 🚫</a>
+                </div>
+            </div>
+
+            <!-- Clash of Clans Section -->
+            <div class="game-section" id="coc" style="display: none;">
+                <div class="game-container">
+                    <div class="logo-container">
+                        <!-- Логотип для Clash of Clans -->
+                        <img src="images/logo_clashofclans.webp" alt="Clash of Clans Logo" class="game-logo">
+                    </div>
+                    <div class="game-description">
+                        Присоединитесь к миллионам игроков по всему миру: стройте свою деревню, развивайте свой клан и соревнуйтесь в эпических войнах кланов!
+                    </div>
+                </div>
+                <div class="buttons">
+                    <a href="coc.html" class="btn">Скачать (Android & iOS)</a>
+                    <a href="index.html" class="btn">Скачать с переводом 🚫</a>
+                </div>
+            </div>
+
+            <!-- Clash Royale Section -->
+            <div class="game-section" id="cr" style="display: none;">
+                <div class="game-container">
+                    <div class="logo-container">
+                        <!-- Логотип для Clash Royale -->
+                        <img src="images/logo_clashroyale.webp" alt="Clash Royale Logo" class="game-logo">
+                    </div>
+                    <div class="game-description">
+                        Добро пожаловать на арену! Составьте боевую колоду и сражайтесь в динамичных боях в реальном времени. Многопользовательская боевая игра в реальном времени от создателей CLASH OF CLANS с вашими любимыми персонажами и не только! Сражайтесь против игроков со всего мира!
+                    </div>
+                </div>
+                <div class="buttons">
+                    <a href="cr.html" class="btn">Скачать (Android & iOS)</a>
+                    <a href="index.html" class="btn">Скачать с переводом 🚫</a>
+                </div>
+            </div>
+
+
+            <!-- Squad Busters Section -->
+            <div class="game-section" id="sb" style="display: none;">
+                <div class="game-container">
+                    <div class="logo-container">
+                        <!-- Логотип для Squad Busters -->
+                        <img src="images/logo_squadbusters.webp" alt="Squad Busters Logo" class="game-logo">
+                    </div>
+                    <div class="game-description">
+                        Каждый матч уникален и непредсказуем! Увеличивайте свой отряд, побеждайте боссов и отряды ваших друзей, собирайте и развивайте любимых персонажей из Clash of Clans, Brawl Stars, Hay Day, Clash Royale и Boom Beach.
+                    </div>
+                </div>
+                <div class="buttons">
+                    <a href="sb.html" class="btn">Скачать (Android)</a>
+                    <a href="index.html" class="btn">Скачать с переводом 🚫</a>
+                </div>
+            </div>
+        </div>
+			
+			<!-- Hay Day Section -->
+			<div class="game-section" id="hd" style="display: none;">
+				<div class="game-container">
+					<div class="logo-container">
+						<!-- Логотип Hay Day -->
+						<img src="images/logo_hayday.webp" alt="Hay Day Logo" class="game-logo">
+					</div>
+					<div class="game-description">
+						Стройте ферму, ловите рыбу, ухаживайте за животными и исследуйте долину. Собирайте урожай, украшайте и обустраивайте свою идеальную ферму.
+					</div>
+				</div>
+				<div class="buttons">
+					<a href="hd.html" class="btn">Скачать (Android & iOS)</a>
+				</div>
+			</div>
+		</div>
+		
+			<!-- Boom Beach Section -->
+			<div class="game-section" id="bb" style="display: none;">
+				<div class="game-container">
+					<div class="logo-container">
+						<!-- Логотип Boom Beach -->
+						<img src="images/logo_boombeach.webp" alt="Hay Day Logo" class="game-logo">
+					</div>
+					<div class="game-description">
+						Мудро и отважно сражайтесь со Стражами тьмы в эпической военно-стратегической игре. Атакуйте вражеские базы, освобождайте островитян и открывайте секреты тропического рая. Соберите игроков по всему миру в опергруппу, чтобы вместе сражаться с врагами.
+					</div>
+				</div>
+				<div class="buttons">
+					<a href="bb-android.html" class="btn">Скачать (Android)</a>
+					<a href="bb-ios.html" class="btn">Скачать (iOS)</a>
+				</div>
+			</div>
+		</div>
+    </main>
+
+    <script>
+        const tabs = document.querySelectorAll('.tab');
+        const gameSections = document.querySelectorAll('.game-section');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Деактивировать все вкладки
+                tabs.forEach(t => t.classList.remove('active'));
+
+                // Скрыть все секции
+                gameSections.forEach(section => section.style.display = 'none');
+
+                // Активировать вкладку и показывать соответствующую секцию
+                tab.classList.add('active');
+                const targetContent = tab.getAttribute('data-content');
+                document.getElementById(targetContent).style.display = 'block';
+            });
+        });
+    </script>
+	
+	<footer>
+		&copy; 2024 Chinese Supercell Prod. Все права отсутствуют! 👍
+	</footer>
+	<!--Start of Tawk.to Script-->
+	<script type="text/javascript">
+		var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+		(function(){
+		var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+		s1.async=true;
+		s1.src='https://embed.tawk.to/67389ef54304e3196ae391e4/1icqipshp';
+		s1.charset='UTF-8';
+		s1.setAttribute('crossorigin','*');
+		s0.parentNode.insertBefore(s1,s0);
+		})();
+	</script>
+	<!--End of Tawk.to Script-->
 </body>
 </html>
