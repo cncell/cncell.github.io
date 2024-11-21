@@ -1,11 +1,3 @@
-/* стили для тёмной темы */
-@font-face {
-    font-family: 'PusiaBold'; /* Имя шрифта */
-    src: url('pusiabold.otf') format('opentype'); /* Путь к файлу шрифта */
-    font-weight: normal;
-    font-style: normal;
-}
-
 /* Add responsiveness for small screens */
 @media (max-width: 768px) {
     .tabs {
