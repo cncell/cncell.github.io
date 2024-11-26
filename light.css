@@ -1,0 +1,439 @@
+html {
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: 'LilitaOneRus';
+    src: url('assets/fonts/LilitaOneRus.woff2') format('woff2'),
+         url('assets/fonts/LilitaOneRus.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'SupercellMagic5';
+    src: url('assets/fonts/SupercellMagic5.woff2') format('woff2'),
+         url('assets/fonts/SupercellMagic5.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'SupercellMagic0';
+    src: url('assets/fonts/SupercellMagic0.woff2') format('woff2'),
+         url('assets/fonts/SupercellMagic0.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'SquadLatin';
+    src: url('assets/fonts/SquadLatin-ExtraBold.woff2') format('woff2'),
+         url('assets/fonts/SquadLatin-ExtraBold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'SCUDKakugo';
+    src: url('assets/fonts/SCUDKakugo.woff2') format('woff2'),
+         url('assets/fonts/SCUDKakugo.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Bangers';
+    src: url('assets/fonts/Bangers.woff2') format('woff2'),
+         url('assets/fonts/Bangers.woff') format('woff');
+}
+
+/* Add responsiveness for small screens */
+@media (max-width: 720px) {
+    .tabs {
+        flex-direction: column; /* Stack tabs vertically on small screens */
+    }
+    .tab {
+        width: 100%;
+        text-align: center;
+    }
+    .fst-info {
+        flex-direction: column;
+        align-items: center;
+    }
+    .fst-logo-container {
+        margin-bottom: 20px;
+    }
+    .fst-description {
+        max-width: 90%;
+        text-align: center;
+    }
+    .game-container {
+        flex-direction: column; /* Stack the logo and description vertically */
+    }
+    .game-description {
+        text-align: center;
+    }
+    .buttons {
+        flex-direction: column;
+    }
+    .btn {
+        margin-bottom: 10px; /* Add space between buttons */
+    }
+    #donate, #team {
+        padding: 20px; /* уменьшить отступы */
+    }
+
+    #donate h2, #team h2 {
+        font-size: 1.8em; /* уменьшить размер заголовков */
+    }
+
+    #donate p, #team p {
+        font-size: 1em; /* уменьшить размер текста */
+    }
+
+    #donate .btn, #team .btn {
+        padding: 8px 15px; /* уменьшить размеры кнопок */
+        font-size: 0.9em; /* уменьшить размер текста на кнопке */
+		margin: 10px 5px;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f5f5f5; /* светлый фон */
+    color: #121212; /* тёмный текст */
+    font-family: "Noto Sans SC", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+header {
+    background-color: #ffffff; /* белый фон */
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* лёгкая тень */
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #121212;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+}
+
+li {
+    margin-left: 20px;
+}
+
+a {
+    color: #121212;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.fst-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.fst-logo-container {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.fst-logo {
+    max-width: 100%;
+    height: auto;
+    border-radius: 25px;
+}
+
+.fst-description {
+    max-width: 400px;
+}
+
+.fst-description h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.channel-description p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.games-heading {
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 50px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.tab {
+    background-color: #eeeeee; /* светлый фон для вкладок */
+    color: #121212;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 5px;
+    font-family: "Noto Sans SC", sans-serif;
+}
+
+.tab.active {
+    background-color: #cccccc; /* активная вкладка немного темнее */
+    border-radius: 10px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.game-section {
+    display: none;
+}
+
+.game-section:first-child {
+    display: block;
+}
+
+.game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo-container {
+    border: none;
+    padding: 20px;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-logo {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.game-description {
+    font-size: 1.2em;
+    margin-left: 20px;
+    word-wrap: break-word;
+    white-space: normal;
+    max-width: 400px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #dddddd; /* светлый фон для кнопок */
+    color: #121212;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+    outline: none;
+}
+
+.btn:hover {
+    background-color: #cccccc; /* темнее при наведении */
+    outline: none;
+}
+
+.btn-h {
+    display: block;
+    width: fit-content;
+    background-color: #dddddd;
+    color: #121212;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px auto;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    position: relative;
+    bottom: 10px;
+}
+
+.btn-h:hover {
+    background-color: #cccccc;
+    outline: none;
+}
+
+.donate {
+    display: inline-block;
+    color: #121212;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+    outline: none;
+    margin-right: 10px;
+}
+
+.bst {
+    background-color: #f0782a;
+}
+
+.bst:hover {
+    background-color: #f05e2d;
+}
+
+.ptr {
+    background-color: #f96854;
+}
+
+.ptr:hover {
+    background-color: #c05546;
+}
+
+.bs {
+    font-family: "LilitaOneRus", sans-serif;
+}
+
+.coc {
+    font-family: "SupercellMagic5", sans-serif;
+}
+
+.cr {
+    font-family: "SupercellMagic0", sans-serif;
+}
+
+.sb {
+    font-family: "SquadLatin", sans-serif;
+}
+
+.hd {
+    font-family: "SCUDKakugo", sans-serif;
+}
+
+.bb {
+    font-family: "Bangers", sans-serif;
+}
+
+#donate, #team {
+    background-color: #ffffff; /* белый фон для секций */
+    color: #121212;
+    padding: 40px;
+    margin-top: 40px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* лёгкая тень */
+}
+
+#donate h2, #team h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#donate p, #team p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+#donate .btn, #team .btn {
+    padding: 10px 30px;
+    background-color: #f0782a;
+    color: #ffffff;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+#donate .btn:hover, #team .btn:hover {
+    background-color: #f05e2d;
+}
+
+#donate .btn {
+    background-color: #f0782a;
+}
+
+#donate .btn:hover {
+    background-color: #f05e2d;
+}
+
+.tgbtn {
+	background-color: #2fa3dd;
+	color: #ffffff;
+	border-radius: 50px;
+	padding: 13px 24px;
+	font-size: 15px;
+	position: relative;
+	top: 15px;
+}
+
+.theme-btn {
+	position: fixed;
+	bottom: 20px; /* расстояние от низа header */
+	right: 20px;  /* расстояние от правого края */
+	padding: 10px 20px;
+	border-radius: 5px;
+	font-size: 16px;
+	cursor: pointer;
+	transition: background-color 0.3s, color 0.3s;
+	background-color: #f0f0f0;
+    color: #333;
+    border: 2px solid #ddd;
+	z-index: 1000;    /* чтобы кнопка была сверху всех элементов */
+}
+
+.theme-btn:hover {
+	background-color: #e0e0e0;
+    border-color: #ccc;
+}
+
+footer {
+    background-color: #f5f5f5;
+    color: #121212;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* лёгкая тень */
+	z-index: 1100;    /* футер будет выше кнопки */
+	position: relative;
+}
+
+footer p {
+    font-size: 1.1em;
+}
+
+footer a {
+    color: #f0782a;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
