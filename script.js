@@ -1,53 +1,59 @@
-// Функция для установки темы из cookies
-function setThemeFromCookies() {
-    const theme = getCookie("theme");
-    if (theme === "dark") {
-        changeTheme("dark.css");
+// функция для установки темы
+function setTheme() {
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    // проверяем, есть ли тема, сохранённая в data-theme атрибуте
+    const savedTheme = document.documentElement.getAttribute("data-theme");
+
+    if (savedTheme) {
+        // если пользователь уже переключал тему, используем её
+        changeTheme(savedTheme === "dark" ? "dark.css" : "light.css");
     } else {
-        changeTheme("light.css");
+        // если темы нет, используем системные настройки
+        changeTheme(prefersDark ? "dark.css" : "light.css");
     }
 }
 
-// Функция для получения значения из cookies
-function getCookie(name) {
-    const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
-    return match ? match[2] : null;
-}
-
-// Функция для установки cookies
-function setCookie(name, value, days) {
-    const d = new Date();
-    d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000)); // через сколько дней cookie удалится
-    const expires = "expires=" + d.toUTCString();
-    document.cookie = name + "=" + value + ";" + expires + ";path=/";
-}
-
-// Функция для смены темы
+// функция для смены темы
 function changeTheme(themeFile) {
-    const link = document.getElementById("theme-stylesheet");
-    const newLink = document.createElement("link");
-    
-    newLink.id = "theme-stylesheet";
-    newLink.rel = "stylesheet";
-    newLink.href = themeFile;
+    let link = document.getElementById("theme-stylesheet");
 
-    // Удаляем старый элемент <link> и добавляем новый
-    link.parentNode.removeChild(link);
-    document.head.appendChild(newLink);
+    if (!link) {
+        // если элемента <link> нет, создаём его
+        link = document.createElement("link");
+        link.id = "theme-stylesheet";
+        link.rel = "stylesheet";
+        document.head.appendChild(link);
+    }
+
+    link.href = themeFile;
+
+    // сохраняем текущую тему в атрибуте data-theme
+    const theme = themeFile.includes("dark") ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", theme);
 }
 
-// Обработчик события для переключения темы
-document.getElementById("toggle-theme").addEventListener("click", function() {
+// обработчик события для переключения темы
+document.getElementById("toggle-theme").addEventListener("click", function () {
     const currentTheme = document.getElementById("theme-stylesheet").getAttribute("href");
 
     if (currentTheme === "light.css") {
         changeTheme("dark.css");
-        setCookie("theme", "dark", 365); // сохраняем в cookies на 1 год
     } else {
         changeTheme("light.css");
-        setCookie("theme", "light", 365);
     }
 });
 
-// Устанавливаем тему при загрузке страницы
-setThemeFromCookies();
+// устанавливаем тему при загрузке страницы
+setTheme();
+
+// отслеживаем изменения системной темы
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+    const prefersDark = e.matches;
+
+    // если пользователь не переключал тему вручную, подстраиваемся под системные настройки
+    const savedTheme = document.documentElement.getAttribute("data-theme");
+    if (!savedTheme) {
+        changeTheme(prefersDark ? "dark.css" : "light.css");
+    }
+});
