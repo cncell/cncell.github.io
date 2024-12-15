@@ -1,5 +1,10 @@
+:root {
+    --header-height: 50px;
+}
+
 html {
     scroll-behavior: smooth;
+	scroll-padding-top: var(--header-height);
 }
 
 @font-face {
@@ -39,7 +44,7 @@ html {
 }
 
 /* Add responsiveness for small screens */
-@media (max-width: 720px) {
+@media (max-width: 768px) {
     .tabs {
         flex-direction: column; /* Stack tabs vertically on small screens */
     }
@@ -106,13 +111,18 @@ body {
 header {
     background-color: #ffffff; /* белый фон */
     padding: 10px 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* лёгкая тень */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.05);
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 1000;
 }
 
 nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+	z-index: 1000;
 }
 
 .logo {
@@ -134,6 +144,10 @@ a {
     color: #121212;
     text-decoration: none;
     font-size: 1em;
+}
+
+.top-info {
+	font-size: 30px;
 }
 
 .fst-info {

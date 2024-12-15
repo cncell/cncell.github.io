@@ -1,5 +1,10 @@
+:root {
+    --header-height: 50px;
+}
+
 html {
     scroll-behavior: smooth;
+	scroll-padding-top: var(--header-height);
 }
 
 @font-face {
@@ -101,16 +106,23 @@ body {
 	font-family: "Noto Sans SC", sans-serif;
 	font-weight: 800;
 	font-style: normal;
+}
 
 header {
     background-color: #1a1a1a;
     padding: 10px 20px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.05);
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 1000;
 }
 
 nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+	z-index: 1000;
 }
 
 .logo {
@@ -131,6 +143,10 @@ a {
     color: #ffffff;
     text-decoration: none;
     font-size: 1em;
+}
+
+.top-info {
+	font-size: 30px;
 }
 
 .fst-info {
@@ -405,7 +421,6 @@ a {
     border-color: #666;
 }
 
-/* стиль для футера */
 footer {
     background-color: #1a1a1a;
     color: #ffffff;
@@ -417,7 +432,6 @@ footer {
 	position: relative;
 }
 
-/* стили для страницы 404 */
 .error-container {
     display: flex;
     flex-direction: column;
