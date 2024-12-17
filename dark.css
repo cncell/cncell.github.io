@@ -46,6 +46,7 @@ html {
     .tab {
         width: 100%;
         text-align: center;
+	margin: none;
     }
     .fst-info {
         flex-direction: column;
